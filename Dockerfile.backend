@@ -3,23 +3,8 @@ FROM maven:3.9-eclipse-temurin-17 AS builder
 
 WORKDIR /app
 
-# Copy pom files
-COPY pom.xml .
-COPY beaver-iot-parent/pom.xml beaver-iot-parent/
-COPY core/pom.xml core/
-COPY services/pom.xml services/
-COPY extension-components/pom.xml extension-components/
-COPY application/pom.xml application/
-
-# Download dependencies
-RUN mvn dependency:go-offline -B
-
-# Copy source code
-COPY core core/
-COPY services services/
-COPY extension-components extension-components/
-COPY application application/
-COPY beaver-iot-parent beaver-iot-parent/
+# Copy entire project
+COPY . .
 
 # Build the application
 RUN mvn clean package -DskipTests -Dmaven.test.skip=true
@@ -30,7 +15,7 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 # Copy the built jar
-COPY --from=builder /app/application/target/application-exec.jar /app/ariot-backend.jar
+COPY --from=builder /app/application/application-standard/target/*.jar /app/ariot-backend.jar
 
 # Create data directory
 RUN mkdir -p /app/data
