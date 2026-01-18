@@ -165,7 +165,7 @@ export default function GreenhouseClimateView(props: GreenhouseClimateViewProps)
                 <div className="gc-footer">
                     <span className="gc-update-time">
                         {entityData[sensors[0].id]?.timestamp
-                            ? new Date(entityData[sensors[0].id].timestamp).toLocaleTimeString('tr-TR')
+                            ? new Date(entityData[sensors[0].id]?.timestamp || 0).toLocaleTimeString('tr-TR')
                             : 'güncelleniyor...'}
                     </span>
                 </div>
