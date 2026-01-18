@@ -73,6 +73,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ariot_db
       SPRING_DATASOURCE_USERNAME: ariot_user
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-ariot_password_change_me}
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
 
       # Redis
       SPRING_REDIS_HOST: redis
