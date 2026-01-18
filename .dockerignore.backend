@@ -1,0 +1,12 @@
+# Backend .dockerignore
+target/
+.mvn/
+*.iml
+.idea/
+.vscode/
+*.log
+*.tmp
+.git/
+.github/
+README.MD
+*.md

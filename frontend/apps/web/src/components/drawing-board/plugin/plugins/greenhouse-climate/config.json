@@ -1,0 +1,155 @@
+{
+    "$schema": "../schema.json",
+    "name": "Sera İklim Widget'ı",
+    "type": "greenhouse-climate",
+    "class": "data_card",
+    "icon": "",
+    "defaultCol": 4,
+    "defaultRow": 3,
+    "minCol": 3,
+    "minRow": 2,
+    "maxRow": 6,
+    "configProps": [
+        {
+            "title": "Temel Ayarlar",
+            "components": [
+                {
+                    "type": "input",
+                    "key": "title",
+                    "title": "Widget Başlığı",
+                    "defaultValue": "Sera İklim Durumu",
+                    "componentProps": {
+                        "placeholder": "Widget başlığını girin"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Sensör Seçimi",
+            "components": [
+                {
+                    "type": "entitySelect",
+                    "key": "temperatureSensor",
+                    "title": "Sıcaklık Sensörü",
+                    "valueType": "string",
+                    "componentProps": {
+                        "entityType": [
+                            "PROPERTY"
+                        ],
+                        "entityValueTypes": [
+                            "DOUBLE",
+                            "LONG"
+                        ]
+                    }
+                },
+                {
+                    "type": "entitySelect",
+                    "key": "humiditySensor",
+                    "title": "Nem Sensörü",
+                    "valueType": "string",
+                    "componentProps": {
+                        "entityType": [
+                            "PROPERTY"
+                        ],
+                        "entityValueTypes": [
+                            "DOUBLE",
+                            "LONG"
+                        ]
+                    }
+                },
+                {
+                    "type": "entitySelect",
+                    "key": "co2Sensor",
+                    "title": "CO2 Sensörü",
+                    "valueType": "string",
+                    "componentProps": {
+                        "entityType": [
+                            "PROPERTY"
+                        ],
+                        "entityValueTypes": [
+                            "DOUBLE",
+                            "LONG"
+                        ]
+                    }
+                },
+                {
+                    "type": "entitySelect",
+                    "key": "lightSensor",
+                    "title": "Işık Sensörü",
+                    "valueType": "string",
+                    "componentProps": {
+                        "entityType": [
+                            "PROPERTY"
+                        ],
+                        "entityValueTypes": [
+                            "DOUBLE",
+                            "LONG"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Eşik Değerleri",
+            "components": [
+                {
+                    "type": "input",
+                    "key": "tempMin",
+                    "title": "Min Sıcaklık (°C)",
+                    "defaultValue": "18",
+                    "valueType": "number",
+                    "componentProps": {
+                        "type": "number"
+                    }
+                },
+                {
+                    "type": "input",
+                    "key": "tempMax",
+                    "title": "Max Sıcaklık (°C)",
+                    "defaultValue": "28",
+                    "valueType": "number",
+                    "componentProps": {
+                        "type": "number"
+                    }
+                },
+                {
+                    "type": "input",
+                    "key": "humidityMin",
+                    "title": "Min Nem (%)",
+                    "defaultValue": "50",
+                    "valueType": "number",
+                    "componentProps": {
+                        "type": "number"
+                    }
+                },
+                {
+                    "type": "input",
+                    "key": "humidityMax",
+                    "title": "Max Nem (%)",
+                    "defaultValue": "80",
+                    "valueType": "number",
+                    "componentProps": {
+                        "type": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Görünüm",
+            "components": [
+                {
+                    "type": "switch",
+                    "key": "showIcons",
+                    "title": "İkonları Göster",
+                    "defaultValue": true
+                },
+                {
+                    "type": "switch",
+                    "key": "showStatus",
+                    "title": "Durum İkonlarını Göster",
+                    "defaultValue": true
+                }
+            ]
+        }
+    ]
+}
